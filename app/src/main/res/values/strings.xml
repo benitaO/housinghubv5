@@ -47,4 +47,11 @@
     <string name="dbname_students">Student</string>
     <string name="dbname_landlord">Landlord</string>
 
+
+    <!-- Login Activity-->
+    <string name="emailTextBoxHint">Email</string>
+    <string name="signupText">Dont have an account? Signup</string>
+
+
+
 </resources>
