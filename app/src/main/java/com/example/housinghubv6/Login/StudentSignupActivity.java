@@ -44,7 +44,7 @@ public class StudentSignupActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private FireBaseMethods firebaseMethods;
-    private Boolean isStudent;
+    private Boolean isStudent = false;
 
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference myRef;
@@ -62,10 +62,10 @@ public class StudentSignupActivity extends AppCompatActivity {
             if(extras == null) {
                 isStudent= false;
             } else {
-                isStudent= extras.getBoolean("isStudent");
+                isStudent = extras.getBoolean("isStudent");
             }
         } else {
-            isStudent= (Boolean) savedInstanceState.getSerializable("isStudent");
+            isStudent = (Boolean) savedInstanceState.getSerializable("isStudent");
         }
 
 

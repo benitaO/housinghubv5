@@ -29,6 +29,8 @@ public class FireBaseMethods {
 
     private Context mContext;
 
+    StudentAccountSettings studentSettings;
+
     public FireBaseMethods(Context context) {
         mAuth = FirebaseAuth.getInstance();
         mContext = context;
@@ -139,7 +141,7 @@ public class FireBaseMethods {
 
 
         if(isStudent){
-            StudentAccountSettings settings = new StudentAccountSettings(
+            studentSettings = new StudentAccountSettings(
               year,
               bio,
               email,
@@ -153,26 +155,19 @@ public class FireBaseMethods {
             );
         }else{
 
+            //make landlord account settings
 
         }
 
-
-
-        /**
         //check the user type then set the settings
         if(isStudent){
             myRef.child(mContext.getString(R.string.dbname_students))
                     .child(userID)
-                    .setValue(settings);
+                    .setValue(studentSettings);
         }else{
-            myRef.child(mContext.getString(R.string.dbname_students))
-                    .child(userID)
-                    .setValue(settings);
+            myRef.child(mContext.getString(R.string.dbname_landlord))
+                    .child(userID);
+                  //  .setValue(landlord);
         }
-
-         **/
-
-
     }
-
 }
