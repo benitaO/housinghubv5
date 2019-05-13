@@ -36,7 +36,7 @@ public class StudentSignupActivity extends AppCompatActivity {
     private EditText editTextUsername;
 
 
-    private String email, firstname, lastname, phonenumber, password,username;
+    private String email, firstname, lastname, phonenumber, password, username;
 
 
     private ProgressBar progressBar;
@@ -87,6 +87,7 @@ public class StudentSignupActivity extends AppCompatActivity {
                 firstname = editTextFirstName.getText().toString();
                 lastname = editTextSurname.getText().toString();
                 password = editTextPassword.getText().toString();
+                username = editTextUsername.getText().toString();
 
                 if(checkInputs(email, firstname,lastname, password,username)){
                     progressBar.setVisibility(View.VISIBLE);
@@ -99,7 +100,6 @@ public class StudentSignupActivity extends AppCompatActivity {
         });
     }
 
-
     private boolean checkInputs(String email, String firstname, String lastname, String password,String username){
         Log.d(TAG, "checkInputs: checking inputs for null values.");
         if(email.equals("") || lastname.equals("") || password.equals("")|| firstname.equals("")||username.equals("")){
@@ -108,7 +108,6 @@ public class StudentSignupActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
     private void setupWidgets() {
         Log.d(TAG, "setUpWidgets: Initializing Widgets.");
@@ -119,10 +118,10 @@ public class StudentSignupActivity extends AppCompatActivity {
 
         // set all the text boxes and buttons on the page
         buttonRegister = (Button) findViewById(R.id.btVerifyYourAccountStudent);
-        editTextEmail = (EditText) findViewById(R.id.etEmailAddress);
-        editTextPassword = (EditText) findViewById(R.id.etPassword);
-        editTextFirstName = findViewById(R.id.etFirstname);
-        editTextSurname = findViewById(R.id.etSurname);
+        editTextEmail = (EditText) findViewById(R.id.etStudentEmail);
+        editTextPassword = (EditText) findViewById(R.id.etStudentPassword);
+        editTextFirstName = findViewById(R.id.etStudentAccountFirstName);
+        editTextSurname = findViewById(R.id.etStudentAccountSurname);
         editTextUsername = findViewById(R.id.studentUsername);
 
         //Sets background imageview to the background image within the drawable folder

@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.housinghubv6.Models.StudentAccountSettings;
 import com.example.housinghubv6.Models.User;
-import com.example.housinghubv6.Models.UserAccountSettings;
 import com.example.housinghubv6.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -126,7 +126,8 @@ public class FireBaseMethods {
                 });
     }
 
-    public void addNewUser(String email, String username, String bio, String website, String profile_photo, boolean isStudent){
+    public void addNewUser(int year, String bio, String email,String firstname, String lastname,
+                           int gbp_month, int no_of_housemates, String username, String profile_photo, boolean isStudent){
 
         //create a new user object with the details
         User user = new User( userID,  "1",  email,  StringManipulation.condenseUsername(username), isStudent );
@@ -138,23 +139,26 @@ public class FireBaseMethods {
 
 
         if(isStudent){
-
-            UserAccountSettings settings = new UserAccountSettings(
-                    bio,
-                    username,
-                    0,
-                    0,
-                    0,
-                    profile_photo,
-                    username,
-                    website
+            StudentAccountSettings settings = new StudentAccountSettings(
+              year,
+              bio,
+              email,
+              firstname,
+              gbp_month,
+              isStudent,
+              lastname,
+              no_of_housemates,
+              profile_photo,
+              username
             );
         }else{
+
 
         }
 
 
 
+        /**
         //check the user type then set the settings
         if(isStudent){
             myRef.child(mContext.getString(R.string.dbname_students))
@@ -166,6 +170,7 @@ public class FireBaseMethods {
                     .setValue(settings);
         }
 
+         **/
 
 
     }

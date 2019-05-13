@@ -178,7 +178,7 @@ public class LandlordSignupActivity extends AppCompatActivity {
                             }
                             username = username + append;
                             //add new user to the database
-                            firebaseMethods.addNewUser(email, username, "", "", "",isStudent);
+                            firebaseMethods.addNewUser(0, "",email, firstname, lastname,0,0,username,"",isStudent);
 
                             //add user settings to the database
                         }
