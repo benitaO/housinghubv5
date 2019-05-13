@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Student Housing hub"
-            android:textColor="@color/white"
+            android:textColor="#000"
             android:textStyle="bold"
             android:textSize="30dp"
             android:layout_centerHorizontal="true"
@@ -30,13 +30,15 @@
         android:id="@+id/rel2"
         android:layout_below="@+id/rel1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:paddingBottom="10dp">
         <EditText
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:background="@color/white"
-            android:hint="Email"
-            android:id="@+id/etLoginEmail"/>
+            android:hint="@string/emailTextBoxHint"
+            android:id="@+id/etLoginEmail"
+            android:paddingLeft="10dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -54,6 +56,7 @@
             android:background="@color/white"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:paddingLeft="10dp"
             />
     </RelativeLayout>
 
@@ -72,8 +75,8 @@
             android:layout_height="50dp"
             android:background="@drawable/rounded_primary_border"
             android:text="@string/login"
-            android:textColor="#FFFFFF"
-         />
+            android:textColor="#000"
+            />
     </RelativeLayout>
 
     <!-- Sign up -->
@@ -86,8 +89,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont have an account? Signup"
-            android:textColor="@color/white"
+            android:text="@string/signupText"
+            android:textColor="#000"
             android:textStyle="bold"
             android:id="@+id/tvSignup"/>
     </RelativeLayout>
